@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "github.vscode-github-actions",
+    "donjayamanne.githistory",
+    "esbenp.prettier-vscode",
+    "rvest.vs-code-prettier-eslint",
+    "bradlc.vscode-tailwindcss",
+    "arjun.swagger-viewer",
+    "github.vscode-pull-request-github",
+    "firsttris.vscode-jest-runner",
+    "lllllllqw.jsdoc",
+    "biomejs.biome"
+  ]
+}

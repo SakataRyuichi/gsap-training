@@ -1,0 +1,114 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+
+## Project Overview
+このプロジェクトは、Next.js App Router を用いたモダンなウェブアプリケーションです。
+サーバーコンポーネント、型安全なAPI通信、スキーマバリデーション、一貫したUI設計に基づいた開発を行います。
+
+### 使用技術・ライブラリ
+- Next.js (App Router)
+- Biome（Lint/Formatter）
+- Tailwind CSS
+- Shadcn UI
+- Radix UI
+- zustand（グローバルステート管理）
+- zod（スキーマバリデーション）
+- pnpm
+
+---
+
+## ディレクトリ構成（すべて `src/` 配下）
+
+
+---
+
+## ブランチ戦略
+- mainブランチを本番環境とする
+- developブランチを開発ブランチとし、常にdevelopからブランチを作成する
+- developからfeature/hogeブランチを作成し開発を行うこと
+- マージ先はdevelopブランチに行うこと
+- hotfixはmainブランチから作成し、mainブランチへとマージを行うこと
+- hotfixを行う際は、バージョンを
+
+## Code Style and Structure
+- 簡潔で技術的に正確な TypeScript のコードを書くこと。
+- 関数型および宣言的なプログラミングパターンを使用し、クラスは避けること。
+- 反復処理やモジュール化を優先し、コードの重複は避けること。
+- isLoading、hasError などの補助動詞を使った記述的な変数名を使用すること。
+- **default export は禁止**。すべて名前付きエクスポートを使用すること。
+- 関数やロジックを実装する前にユニットテスト（Jest）を記述すること（TDD推奨）。
+- コメントは「なぜその実装なのか」を記述し、すべての関数・コンポーネントには **JSDoc** を記載すること。
+
+---
+
+## Naming Conventions
+- ディレクトリ名はハイフン区切りの小文字を使用（例：components/auth-wizard）。
+- カスタムフックは `use` プレフィックスを付ける。
+- TODO コメントには日付・担当者・目的を記載（例：`// TODO(2025-06-13 坂田): エラー処理の実装`）。
+
+---
+
+## TypeScript Usage
+- すべてのコードに TypeScript を使用する。
+- 型定義は基本的に `type` を使用し、`interface` は使用しない。
+- `enum` は使用せず、代わりにリテラル型またはオブジェクトマップを使用。
+- Props の定義もすべて `type` で記述。
+
+---
+
+## Syntax and Formatting
+- 関数アロー関数を使用すること
+- 純粋関数には `function` キーワードを使用する。
+- 簡潔な条件式では波括弧を省略する。
+- JSX は読みやすく、宣言的に記述する。
+
+---
+
+## UI and Styling
+- UI コンポーネントは `src/components/` に集約。
+- shadcn/ui コンポーネントは `src/components/ui/` に配置。
+- スタイリングには Tailwind CSS を使用。CSS ModulesやSCSSは使用禁止。
+- モバイルファーストの設計でレスポンシブ対応を実装。
+
+---
+
+---
+
+## State Management
+- グローバルステートは `zustand` を使用。
+- ローカルステートは `useState` で実装するが、必要に応じて zustand も検討。
+- 状態定義には `zod` によるスキーマバリデーションを導入。
+
+---
+
+## Performance Optimization
+- React Server Components（RSC）を基本とし、`use client` の使用は最小限に抑える。
+  - Web APIアクセスやイベント制御のみで使用。
+- クライアントコンポーネントは必ず `Suspense` + fallback でラップする。
+- 画像は WebP形式、サイズ指定、lazy loading を行う。
+
+---
+
+## Tooling
+- Lint と Format は **Biome** を使用。
+- **ESLint** および **Prettier** は使用禁止。
+- パッケージマネージャーは **pnpm** を使用。
+
+---
+
+## 言語ルール
+- コード中のコメント・変数名・関数名・ドキュメントは**日本語をデフォルト**とする。
+- 必要に応じて英語を併用可だが、混在せず一貫性を保つこと。
+
+---
+
+## 禁止事項
+- `any` や `as unknown as` の乱用
+- default export
+- console.log のコミット
+- ビジネスロジックとUIの密結合
+- CSSモジュールやSCSSの使用
+- JSX内に直接テキストを埋め込む（多言語未対応になるため）
