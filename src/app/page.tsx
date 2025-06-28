@@ -78,52 +78,52 @@ export default function Home() {
 	return (
 		<div
 			ref={container}
-			className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-700 flex flex-col items-center justify-center p-8"
+			className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-slate-900 to-slate-700 p-8"
 		>
-			<div className="max-w-4xl mx-auto text-center space-y-12">
+			<div className="mx-auto max-w-4xl space-y-12 text-center">
 				{/* Title */}
 				<h1
 					ref={textRef}
-					className="text-5xl md:text-7xl font-bold text-white mb-8"
+					className="mb-8 font-bold text-5xl text-white md:text-7xl"
 				>
 					GSAP + React
 				</h1>
 
 				{/* Animated Elements */}
-				<div className="flex flex-wrap justify-center items-center gap-12">
+				<div className="flex flex-wrap items-center justify-center gap-12">
 					{/* Rotating Box */}
 					<div className="flex flex-col items-center space-y-4">
 						<div
 							ref={boxRef}
-							className="w-20 h-20 bg-blue-500 rounded-lg shadow-lg"
+							className="h-20 w-20 rounded-lg bg-blue-500 shadow-lg"
 						/>
-						<p className="text-white text-sm">Rotating Box</p>
+						<p className="text-sm text-white">Rotating Box</p>
 					</div>
 
 					{/* Bouncing Circle */}
 					<div className="flex flex-col items-center space-y-4">
 						<div
 							ref={circleRef}
-							className="w-20 h-20 bg-green-500 rounded-full shadow-lg"
+							className="h-20 w-20 rounded-full bg-green-500 shadow-lg"
 						/>
-						<p className="text-white text-sm">Bouncing Circle</p>
+						<p className="text-sm text-white">Bouncing Circle</p>
 					</div>
 
 					{/* Color Changing Text */}
 					<div className="flex flex-col items-center space-y-4">
-						<div className="animated-text text-4xl font-bold">GSAP</div>
-						<p className="text-white text-sm">Color Animation</p>
+						<div className="animated-text font-bold text-4xl">GSAP</div>
+						<p className="text-sm text-white">Color Animation</p>
 					</div>
 				</div>
 
 				{/* Info Section */}
-				<div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white">
-					<h2 className="text-2xl font-semibold mb-4">
+				<div className="rounded-xl bg-white/10 p-6 text-white backdrop-blur-sm">
+					<h2 className="mb-4 font-semibold text-2xl">
 						GSAP React Integration
 					</h2>
-					<div className="grid md:grid-cols-2 gap-4 text-left">
+					<div className="grid gap-4 text-left md:grid-cols-2">
 						<div>
-							<h3 className="font-semibold text-blue-300 mb-2">Features:</h3>
+							<h3 className="mb-2 font-semibold text-blue-300">Features:</h3>
 							<ul className="space-y-1 text-sm">
 								<li>• useGSAP hook for React integration</li>
 								<li>• Scoped animations with useRef</li>
@@ -132,7 +132,7 @@ export default function Home() {
 							</ul>
 						</div>
 						<div>
-							<h3 className="font-semibold text-green-300 mb-2">Tech Stack:</h3>
+							<h3 className="mb-2 font-semibold text-green-300">Tech Stack:</h3>
 							<ul className="space-y-1 text-sm">
 								<li>• Next.js 15</li>
 								<li>• GSAP with React hooks</li>
@@ -144,7 +144,7 @@ export default function Home() {
 				</div>
 
 				{/* Controls */}
-				<div className="flex gap-4 justify-center">
+				<div className="flex justify-center gap-4">
 					<button
 						type="button"
 						onClick={() => {
@@ -154,7 +154,7 @@ export default function Home() {
 								ease: "power2.out",
 							});
 						}}
-						className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors"
+						className="rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700"
 					>
 						Trigger Animation
 					</button>
@@ -169,13 +169,13 @@ export default function Home() {
 								ease: "power2.inOut",
 							});
 						}}
-						className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium transition-colors"
+						className="rounded-lg bg-green-600 px-6 py-3 font-medium text-white transition-colors hover:bg-green-700"
 					>
 						Pulse Effect
 					</button>
 					<a
 						href="/slide"
-						className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium transition-colors"
+						className="rounded-lg bg-purple-600 px-6 py-3 font-medium text-white transition-colors hover:bg-purple-700"
 					>
 						View Slide Demo
 					</a>
